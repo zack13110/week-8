@@ -1,4 +1,4 @@
-# week-7
+# week-8
 
 * Design pattern#2 - MVC
 * GUI with .Net/C#
