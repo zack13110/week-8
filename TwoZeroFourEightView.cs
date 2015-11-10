@@ -14,15 +14,16 @@ namespace twozerofoureight
     {
         Model model;
         Controller controller;
-
-        TwoZeroFourEightScoreView ShowScoreForm = new TwoZeroFourEightScoreView();
-        
+        TwoZeroFourEightScoreView view;
+       
 
         public TwoZeroFourEightView()
         {
             InitializeComponent();
             model = new TwoZeroFourEightModel();
+            view = new TwoZeroFourEightScoreView();
             model.AttachObserver(this);
+            model.AttachObserver(view);
             controller = new TwoZeroFourEightController();
             controller.AddModel(model);
             controller.ActionPerformed(TwoZeroFourEightController.LEFT);
@@ -114,10 +115,8 @@ namespace twozerofoureight
         {
             string s;
             s = getscore.ToString();
-            label3.Text = s;
-            ShowScoreForm.lblScore.Text = s;
-            ShowScoreForm.Visible = true;
-            
+            label2.Text = s;
+            view.Visible = true;
         }
     }
 }
